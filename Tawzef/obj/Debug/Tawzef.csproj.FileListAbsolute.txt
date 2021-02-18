@@ -100,3 +100,6 @@ D:\asp.net projects\Tawzef\Tawzef\Tawzef\bin\Microsoft.Owin.Security.Google.xml
 D:\asp.net projects\Tawzef\Tawzef\Tawzef\bin\Microsoft.Owin.Security.OAuth.xml
 D:\asp.net projects\Tawzef\Tawzef\Tawzef\bin\Newtonsoft.Json.xml
 D:\asp.net projects\Tawzef\Tawzef\Tawzef\bin\System.Web.Optimization.xml
+D:\asp.net projects\Tawzef\Tawzef\Tawzef\obj\Debug\Tawzef.Migrations.InitialCreate.resources
+D:\asp.net projects\Tawzef\Tawzef\Tawzef\obj\Debug\Tawzef.csproj.GenerateResource.cache
+D:\asp.net projects\Tawzef\Tawzef\Tawzef\obj\Debug\Tawzef.Migrations.AddColumn.resources

@@ -50,16 +50,15 @@ namespace WebApplication1.Models
     {
        
         [Required]
-        [Display(Name = "البريد الالكتروني")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "اسم المستخدم")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "كلمه السر")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "تذكرني؟")]
         public bool RememberMe { get; set; }
     }
 
@@ -68,6 +67,11 @@ namespace WebApplication1.Models
         [Required]
         [Display(Name = "اسم المستخدم")]
         public string UserName { get; set; }
+
+        [Required]
+        [Display(Name = "نوع المستخدم")]
+        public string UserType { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "البريد الالكتروني")]
