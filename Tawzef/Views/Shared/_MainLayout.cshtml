@@ -9,7 +9,7 @@
     <link href="~/Contrnt/Style.css" rel="stylesheet" />
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -62,7 +62,7 @@
             @RenderBody()
         </div>
     </div>
-<footer class="navbar navbar-fixed-bottom myfooter">
+<footer class="navbar myfooter">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -108,5 +108,6 @@
 </footer>
     <script src="~/Scripts/jquery-3.2.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false);
 </body>
 </html>

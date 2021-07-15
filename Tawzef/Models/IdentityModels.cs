@@ -30,5 +30,9 @@ namespace WebApplication1.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Tawzef.Models.Category> Categories { get; set; }
+
+        public System.Data.Entity.DbSet<Tawzef.Models.Job> Jobs { get; set; }
     }
 }

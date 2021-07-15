@@ -103,3 +103,6 @@ D:\asp.net projects\Tawzef\Tawzef\Tawzef\bin\System.Web.Optimization.xml
 D:\asp.net projects\Tawzef\Tawzef\Tawzef\obj\Debug\Tawzef.Migrations.InitialCreate.resources
 D:\asp.net projects\Tawzef\Tawzef\Tawzef\obj\Debug\Tawzef.csproj.GenerateResource.cache
 D:\asp.net projects\Tawzef\Tawzef\Tawzef\obj\Debug\Tawzef.Migrations.AddColumn.resources
+D:\asp.net projects\Tawzef\Tawzef\Tawzef\obj\Debug\Tawzef.Migrations.addCategoryTable.resources
+D:\asp.net projects\Tawzef\Tawzef\Tawzef\obj\Debug\Tawzef.Migrations.addJobsTable.resources
+D:\asp.net projects\Tawzef\Tawzef\Tawzef\obj\Debug\Tawzef.Migrations.hgfhd.resources
