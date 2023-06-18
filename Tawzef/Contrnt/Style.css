@@ -3,12 +3,18 @@
     src: url('fonts/glyphicons-halflings-regular.woff2')
 }
 
-/*body{
-    padding-top:60px;
-}*/
+body{
+}
 .navbar{
     margin-bottom:0;
     border-radius:0;
+}
+#dropdownMenu1 {
+    background-color: #0c5c82 ;
+    color: #fff;
+    border-color: #0c5c82;
+    border-radius: 0;
+    margin-top:5px;
 }
 .navbar-default {
     background-color: #0c5c82;
@@ -53,5 +59,18 @@
     margin:15px 10px;
     padding:0 20px 10px;
     height:350px;
+}
+#SearchName {
+    width: 130px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    background-position:10px 10px;
+    padding:10px;
+    margin-top:3px;
+    transition:width .4s ease-in-out;
+}
+#SearchName:focus{
+    width:100%;
 }
 /*end home page */

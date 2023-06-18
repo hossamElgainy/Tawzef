@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using WebApplication1.Models;
 
 namespace Tawzef.Models
 {
@@ -16,7 +17,9 @@ namespace Tawzef.Models
         [Display(Name = "صوره الوظيفه")]
         public string JobImage { get; set; }
         public int CategoryId { get; set; }
+        public string UserId { get; set; }
 
         public virtual Category Category { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }

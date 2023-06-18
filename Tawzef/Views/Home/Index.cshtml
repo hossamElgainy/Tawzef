@@ -20,7 +20,7 @@
                 <div class="details">
                     <h3>@Html.DisplayFor(z => subitem.JobTitle)</h3>
                     <h5>@Html.DisplayFor(z => subitem.JobContent)</h5>
-                    <button class="btn btn-default">التفاصيل</button>
+                    @Html.ActionLink("التفاصيل","Details",new { JobId = subitem.Id},new { @class="btn btn-primary"})
                 </div>
             </div>
         }

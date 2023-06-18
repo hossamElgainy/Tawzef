@@ -9,6 +9,9 @@ using System.Web.Mvc;
 using Tawzef.Models;
 using WebApplication1.Models;
 using System.IO;
+using Rotativa;
+using Microsoft.AspNet.Identity;
+
 namespace Tawzef.Controllers
 {
     public class JobsController : Controller
@@ -20,6 +23,10 @@ namespace Tawzef.Controllers
         {
             var jobs = db.Jobs.Include(j => j.Category);
             return View(jobs.ToList());
+        }
+        public ActionResult Print()
+        {
+            return new ActionAsPdf("Index");
         }
 
         // GET: Jobs/Details/5
@@ -56,6 +63,7 @@ namespace Tawzef.Controllers
                 string path = Path.Combine(Server.MapPath("~/UPloads"), Upload.FileName);
                 Upload.SaveAs(path);
                 job.JobImage = Upload.FileName;
+                job.UserId = User.Identity.GetUserId() ;
                 db.Jobs.Add(job);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Tawzef.Models.ApplyForJobs>
+
+@{
+    ViewBag.Title = "وظائف المستخدم";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>الوظائف المتقدم إليها</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.job.JobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplyDate)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.job.JobTitle)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Message)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ApplyDate)
+    </td>
+
+    <td>
+        @Html.ActionLink("تفاصيل الوظيفه", "MyJobDetails", new {id=item.Id},new { @class="btn btn-primary"})
+        @Html.ActionLink("تعديل", "Edit", new {id=item.Id},new { @class="btn btn-success"})
+        @Html.ActionLink("حذف", "Delete", new {id=item.Id},new { @class="btn btn-danger"})
+        <a href="/Categories/Delete/@item.Id" class="btn btn-danger">حذف <i class="fa fa-close"></i> </a>
+    </td>
+</tr>
+    }
+
+</table>

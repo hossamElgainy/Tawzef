@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Tawzef.Models.Job>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="panel panel-default">
+    <h1 class="panel-heading">نتائج البحث</h1>
+
+    <div class="row">
+        @foreach (var subitem in Model)
+        {
+            <div class="col-md-3 thumbnail job-box">
+                <img src="~/UPloads/@subitem.JobImage" />
+                <div class="details">
+                    <h3>@Html.DisplayFor(z => subitem.JobTitle)</h3>
+                    <h5>@Html.DisplayFor(z => subitem.JobContent)</h5>
+                    @Html.ActionLink("التفاصيل", "Details", new { JobId = subitem.Id }, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

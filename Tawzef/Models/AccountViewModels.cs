@@ -48,12 +48,12 @@ namespace WebApplication1.Models
 
     public class LoginViewModel
     {
-       
-        [Required]
+
+        [Required(ErrorMessage = "برجاء إدخال إسم المستخدم")]
         [Display(Name = "اسم المستخدم")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="برجاء إدخال كلمة السر")]
         [DataType(DataType.Password)]
         [Display(Name = "كلمه السر")]
         public string Password { get; set; }

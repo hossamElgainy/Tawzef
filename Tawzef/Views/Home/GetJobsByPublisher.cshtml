@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Tawzef.Models.JobsViewModel>
+@{
+    ViewBag.Title = "وظائف الناشر";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2 class="text-center ">وظائف الناشر</h2>
+@foreach (var gr in Model)
+{
+    @gr.JobTitle
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>إسم الباحث</th>
+            <th>نص الرسالة</th>
+            <th>تاريخ الإرسال</th>
+
+        </tr>
+        @foreach (var item in gr.Items)
+        {
+            <tr>
+                <td>@item.User.UserName</td>
+                <td>@item.Message</td>
+                <td>@item.ApplyDate</td>
+            </tr>
+        }
+    </table>
+}
+
+
+

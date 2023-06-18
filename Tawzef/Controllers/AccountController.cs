@@ -17,6 +17,7 @@ namespace WebApplication1.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         public AccountController()
         {
@@ -139,7 +140,7 @@ namespace WebApplication1.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ViewBag.UserType = new SelectList(new[] { "ناشر", "باحث" });
+            ViewBag.UserType = new SelectList(db.Roles,"Name","Name");
             return View();
         }
 
@@ -152,19 +153,19 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                ViewBag.UserType = new SelectList(new[] { "ناشر", "باحث" });
+                ViewBag.UserType = new SelectList(db.Roles, "Name", "Name");
                 var user = new ApplicationUser { UserName = model.UserName, Email = model.Email ,UserType=model.UserType};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
+                    await UserManager.AddToRoleAsync(user.Id,model.UserType);
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
@@ -394,7 +395,7 @@ namespace WebApplication1.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index","Home");
         }
 
         //
