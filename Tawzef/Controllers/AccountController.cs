@@ -175,6 +175,37 @@ namespace WebApplication1.Controllers
             return View(model);
         }
 
+        public ActionResult EditMyProfile()
+        {
+            var userId = User.Identity.GetUserId();
+            var user = db.Users.Where(a => a.Id == userId).SingleOrDefault();
+            EditProfileViewModel profile = new EditProfileViewModel();
+            profile.UserName = user.UserName;
+            profile.Email = user.Email;
+            return View(profile);
+        }
+        [HttpPost]
+        public ActionResult EditMyProfile(EditProfileViewModel profile)
+        {
+            var UserId = User.Identity.GetUserId();
+            var CurrentUser = db.Users.Where(a => a.Id == UserId).SingleOrDefault();
+            if(!UserManager.CheckPassword(CurrentUser,profile.CurrentPassword))
+            {
+                ViewBag.Message = "كلمه السر الحاليه غير صحيحه";
+            }
+            else
+            {
+                var NewPasswordHash = UserManager.PasswordHasher.HashPassword(profile.NewPassword);
+                CurrentUser.UserName = profile.UserName;
+                CurrentUser.Email = profile.Email;
+                CurrentUser.PasswordHash = NewPasswordHash;
+                db.Entry(CurrentUser).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                ViewBag.Message = "تم التحديث بنجاح";
+            }
+            return View(profile);
+        }
+
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]

@@ -288,6 +288,7 @@
     <Content Include="Views\Home\Delete.cshtml" />
     <Content Include="Views\Home\GetJobsByPublisher.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Account\EditMyProfile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
