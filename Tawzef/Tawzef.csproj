@@ -150,10 +150,6 @@
     <Content Include="fonts\GE_SS_Two_Light.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Rotativa\help-wkhtmltoimage.txt" />
-    <Content Include="Rotativa\help-wkhtmltopdf.txt" />
-    <Content Include="Rotativa\wkhtmltoimage.exe" />
-    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="UPloads\Search-Icon.png" />
@@ -167,12 +163,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\ApplyForJobController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\JobsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\JobsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RolesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -265,30 +262,31 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_LogIn.cshtml" />
-    <Content Include="Views\Categories\Create.cshtml" />
-    <Content Include="Views\Categories\Delete.cshtml" />
-    <Content Include="Views\Categories\Details.cshtml" />
-    <Content Include="Views\Categories\Edit.cshtml" />
-    <Content Include="Views\Categories\Index.cshtml" />
-    <Content Include="Views\Jobs\Create.cshtml" />
-    <Content Include="Views\Jobs\Delete.cshtml" />
-    <Content Include="Views\Jobs\Details.cshtml" />
-    <Content Include="Views\Jobs\Edit.cshtml" />
-    <Content Include="Views\Jobs\Index.cshtml" />
-    <Content Include="Views\Roles\Index.cshtml" />
-    <Content Include="Views\Roles\Create.cshtml" />
-    <Content Include="Views\Roles\Details.cshtml" />
-    <Content Include="Views\Roles\Edit.cshtml" />
-    <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Jobs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Jobs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Jobs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Jobs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Jobs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Delete.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
-    <Content Include="Views\Home\Apply.cshtml" />
+    <Content Include="Views\ApplyForJob\Apply.cshtml" />
     <Content Include="Views\Home\GetUserJobs.cshtml" />
-    <Content Include="Views\Home\MyJobDetails.cshtml" />
-    <Content Include="Views\Home\Edit.cshtml" />
-    <Content Include="Views\Home\Delete.cshtml" />
+    <Content Include="Views\ApplyForJob\MyJobDetails.cshtml" />
+    <Content Include="Views\ApplyForJob\Edit.cshtml" />
+    <Content Include="Views\ApplyForJob\Delete.cshtml" />
     <Content Include="Views\Home\GetJobsByPublisher.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Account\EditMyProfile.cshtml" />
+    <Content Include="Views\ApplyForJob\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -298,10 +296,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Area\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202102152237538_InitialCreate.resx">

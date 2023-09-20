@@ -1,0 +1,29 @@
+﻿@model Tawzef.Models.Category
+
+@{
+    ViewBag.Title = "التفاصيل";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل نوع الوظيفه</h2>
+
+<div>
+    <hr />
+    <span class="Job-details">
+        @Html.DisplayNameFor(model => model.CategoryName) :
+    </span>
+    @Html.DisplayFor(model => model.CategoryName)
+    <br />
+
+    <span class="Job-details">
+        @Html.DisplayNameFor(model => model.CategoryDescription) :
+    </span>
+    @Html.DisplayFor(model => model.CategoryDescription)
+    <br />
+ 
+</div>
+
+<p>
+    <a href="/Categories/Edit/@Model.id" class="btn btn-primary"> تعديل نوع الوظيفه<i class="fa fa-edit"></i></a>
+    <a href="/Categories/Index/@Model.id" class="btn btn-success">  العوده الي القائمه الرئيسيه<i class="fa fa-edit"></i></a>
+</p>

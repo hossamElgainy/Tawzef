@@ -6,42 +6,47 @@
 }
 
 <h2>الوظائف المتقدم إليها</h2>
+@if(Model.Count()>0)
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.job.JobTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplyDate)
+            </th>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.job.JobTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Message)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ApplyDate)
-        </th>
+            <th></th>
+        </tr>
 
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.job.JobTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplyDate)
+            </td>
 
-    @foreach (var item in Model)
-    {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.job.JobTitle)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Message)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ApplyDate)
-    </td>
+            <td>
+                @Html.ActionLink("تفاصيل الوظيفه", "MyJobDetails", "ApplyForJob", new { id = item.Id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("تعديل", "Edit", "ApplyForJob", new { id = item.Id }, new { @class = "btn btn-success" })
+                @Html.ActionLink("حذف", "Delete", "ApplyForJob", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+        }
 
-    <td>
-        @Html.ActionLink("تفاصيل الوظيفه", "MyJobDetails", new {id=item.Id},new { @class="btn btn-primary"})
-        @Html.ActionLink("تعديل", "Edit", new {id=item.Id},new { @class="btn btn-success"})
-        @Html.ActionLink("حذف", "Delete", new {id=item.Id},new { @class="btn btn-danger"})
-        <a href="/Categories/Delete/@item.Id" class="btn btn-danger">حذف <i class="fa fa-close"></i> </a>
-    </td>
-</tr>
-    }
-
-</table>
+    </table>
+}
+else
+{
+    <div class="alert alert-success" style="font-size:25px">لم تتقدم إلي أى وظيفه بعد</div>
+}

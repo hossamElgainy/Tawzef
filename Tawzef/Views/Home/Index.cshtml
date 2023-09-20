@@ -1,29 +1,32 @@
 ﻿@model IEnumerable<Tawzef.Models.Category>
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "الصفحة الرئيسيه";
 }
-
-<div class="jumbotron">
-    <h1></h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<div style="margin-bottom:300px">
 @foreach (var item in Model)
 {
-    <h1>@Html.DisplayFor(z => item.CategoryName)</h1>
-    <h5>@Html.DisplayFor(z => item.CategoryDescription)</h5>
-    <div class="row">
-        @foreach (var subitem in item.Jobs)
+    if (item.Jobs.Count() > 0)
+    {
+        <h1>@Html.DisplayFor(z => item.CategoryName)</h1>
+        <h5>@Html.DisplayFor(z => item.CategoryDescription)</h5>
+    }
+    <div class="row text-center">
+        @foreach (var subItem in item.Jobs)
         {
-            <div class="col-md-3 thumbnail job-box">
-                <img src="~/UPloads/@subitem.JobImage" />
-                <div class="details">
-                    <h3>@Html.DisplayFor(z => subitem.JobTitle)</h3>
-                    <h5>@Html.DisplayFor(z => subitem.JobContent)</h5>
-                    @Html.ActionLink("التفاصيل","Details",new { JobId = subitem.Id},new { @class="btn btn-primary"})
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img style="max-height: 225px; height: 225px;" class="card-img-top" src="~/UPloads/@subItem.JobImage" />
+                    <div class="card-body">
+                        <h4 class="card-title">@Html.DisplayFor(z => subItem.JobTitle)</h4>
+                        <p class="card-text">@Html.DisplayFor(z => subItem.JobContent)</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="@Url.Action("Details","Home",new { JobId = subItem.Id })" class="btn btn-primary">التفاصيل</a>
+                    </div>
                 </div>
             </div>
         }
     </div>
+  
 }
-
+</div>

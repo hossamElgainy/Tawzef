@@ -1,0 +1,45 @@
+﻿@model Tawzef.Models.ApplyForJobs
+
+<h3 class="text-center">هل انت متأكد انك تريد الحذف؟</h3>
+<div>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.job.JobTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplyDate)
+            </th>
+
+        </tr>
+
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.job.JobTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Message)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ApplyDate)
+            </td>
+
+        </tr>
+        
+
+    </table>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "GetUserJobs","Home")
+        </div>
+    }
+</div>

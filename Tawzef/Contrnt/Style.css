@@ -5,6 +5,7 @@
 
 body{
 }
+/* Start NavBar*/
 .navbar{
     margin-bottom:0;
     border-radius:0;
@@ -28,10 +29,51 @@ body{
     .navbar-default .navbar-nav > li > a:hover {
         color: #fff;
     }
+.dropdown-menu {
+    background-color: #0c5c82;
+    min-width: 200px;
+    border-top: 3px solid #8216E7;
+    position: absolute;
+    top: 145%;
+}
+
+.navbar-right .dropdown-menu {
+    right: auto;
+    left: 0;
+}
+
+.dropdown-menu > li > a {
+    color: #fff;
+    padding: 6px 20px;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: #fff;
+    padding-left: 25px;
+    background-color: #000;
+}
+
+.dropdown-menu .divider {
+    background-color: #28792F;
+}
+
+.navbar-toggle {
+    margin-top: 18px;
+}
+    /*End NavBar*/
 .myfooter{
     background:#0c5c82;
-    padding-top:10px;
-    margin-top:50px;
+    padding:20px;
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    margin-top:200px;
+}
+.myfooter .container{
+    max-width:960px;
+    margin:0 auto;
 }
 .myfooter ul{
     list-style:none;
@@ -55,11 +97,7 @@ body{
 }
 /*end job page*/
 /*start home page*/
-.job-box{
-    margin:15px 10px;
-    padding:0 20px 10px;
-    height:350px;
-}
+
 #SearchName {
     width: 130px;
     border: 2px solid #ccc;
@@ -72,5 +110,40 @@ body{
 }
 #SearchName:focus{
     width:100%;
+}
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-img, .card-img-top {
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 95px;
+    padding: 1.25rem;
+}
+
+.card-footer:last-child {
+    border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+}
+
+.card-footer {
+    padding: .75rem 1.25rem;
+    background-color: rgba(0,0,0,.03);
+    border-top: 1px solid rgba(0,0,0,.125);
 }
 /*end home page */

@@ -5,25 +5,35 @@
 }
 
 <h2 class="text-center ">وظائف الناشر</h2>
-@foreach (var gr in Model)
+@if (Model.Count() > 0)
 {
-    @gr.JobTitle
-    <table class="table table-bordered table-hover">
-        <tr>
-            <th>إسم الباحث</th>
-            <th>نص الرسالة</th>
-            <th>تاريخ الإرسال</th>
-
-        </tr>
-        @foreach (var item in gr.Items)
-        {
+    foreach (var gr in Model)
+    {
+        @gr.JobTitle
+        <table class="table table-bordered table-hover">
             <tr>
-                <td>@item.User.UserName</td>
-                <td>@item.Message</td>
-                <td>@item.ApplyDate</td>
+                <th>إسم الباحث</th>
+                <th>نص الرسالة</th>
+                <th>تاريخ الإرسال</th>
+
             </tr>
-        }
-    </table>
+            @foreach (var item in gr.Items)
+            {
+                <tr>
+                    <td>@item.User.UserName</td>
+                    <td>@item.Message</td>
+                    <td>@item.ApplyDate</td>
+                </tr>
+            }
+        </table>
+    }
+
+}
+else
+{
+<div class="alert alert-success" style="font-size:25px">
+    لم تقم بنشر أى وظيفه بعد <a href="~/Jobs/Create">نشر وظيفه جديده</a>
+</div>
 }
 
 

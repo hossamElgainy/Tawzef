@@ -1,0 +1,41 @@
+﻿@model Tawzef.Models.ApplyForJobs
+
+@{
+    ViewBag.Title = "تفاصيل الوظيفه";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>تفاصيل الوظيفه</h2>
+
+<div>
+    <hr />
+    <span class="Job-details">
+        @Html.DisplayNameFor(model => model.job.JobTitle) :
+    </span>
+    @Html.DisplayFor(model => model.job.JobTitle)
+    <br />
+
+    <span class="Job-details">
+        @Html.DisplayNameFor(model => model.Message) :
+    </span>
+    @Html.DisplayFor(model => model.Message)
+    <br />
+
+    <span class="Job-details">
+        @Html.DisplayNameFor(model => model.ApplyDate) :
+    </span>
+    @Html.DisplayFor(model => model.ApplyDate)
+    <br />
+
+    <span class="Job-details">
+        @Html.DisplayNameFor(model => model.job.JobImage) :
+    </span>
+    <img src="~/UPloads/@Html.DisplayFor(model => model.job.JobImage)"
+         style="width:48px;height:48px;" />
+
+
+</div>
+<br />
+<p>
+    <a href="/Home/GetUserJobs" class="btn btn-success">  العوده الي القائمه الرئيسيه<i class="fa fa-edit"></i></a>
+</p>
